@@ -2,83 +2,101 @@
    Barra superior (ícones no topo)
    Usa Flexbox para alinhar os itens horizontalmente
    ========================= */
-.decima{
-    display: flex;                  /* ativa o Flexbox */
-    justify-content: space-between; /* coloca itens nas extremidades */
-    align-items: center;            /* centraliza verticalmente */
-    background-color: #1b5e20;      /* cor de fundo da barra superior */
-    padding: 10px 20px;             /* espaço interno */
-    color: white;                   /* cor do texto */
+.barra-superior {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;                 /* 🔹 substitui width: 100% */
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 12px 16px;       /* padding menor e seguro */
+  box-sizing: border-box;   /* 🔹 impede overflow */
+
+  background: transparent;
+  z-index: 100;
 }
 
 /* =========================
    Configurações gerais da página
    Controla layout, fonte e fundo
    ========================= */
-body{
-    margin: 0;                      /* remove margens padrão */
-    min-height: 100vh;              /* ocupa toda a altura da tela */
-    display: flex;                  /* ativa Flexbox */
-    flex-direction: column;         /* organiza os elementos em coluna */
-    font-family: Open, sans-serif;  /* fonte padrão */
-    background-color: #e8f5e9;      /* cor de fundo da página */
+
+.img-logo {
+  width: 400px;
+  margin: 50px auto 0 auto; /* empurra para baixo do topo */
+}
+
+main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* Fundo exclusivo da página index */
+.index-page {
+  background-color: #afdfee;
+
+    /* possibilidade que combina com o index-page main ->
+    linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),*/
+
+    /* pra quem fizer questao de fundo diferentão -> url("../images/ceu01.jpg");*/
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/*.index-page main {
+  background-color: rgba(255, 255, 255, 0.514);
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 1100px;
+  margin: 40px auto;
+}*/
+
+body {
+  margin: 0;
+  font-family: Open, sans-serif; /* mudar essa fonte*/
 }
 
 /* =========================
    Conteúdo principal
    Ocupa o espaço disponível da tela
    ========================= */
-main{
-    flex: 1;                        /* ocupa o espaço restante */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
 }
 
-/* =========================
-   Área principal do conteúdo
-   Centraliza os elementos
-   ========================= */
-.principal{
-    display: flex;                  /* ativa Flexbox */
-    flex-direction: column;         /* organiza em coluna */
-    justify-content: center;        /* centraliza horizontalmente */
-    align-items: center;            /* centraliza verticalmente */
-}
-
-/* =========================
-   Título principal da página
-   ========================= */
-h1{
-    text-align: center;             /* centraliza o texto */
-    font-size: 25pt;                /* tamanho da fonte */
-    color: #0d3b12;                 /* cor do texto */
-}
-
-/* =========================
-   Parágrafo personalizado
-   ========================= */
-.paragafo1{
-    font-size: 20pt;                /* tamanho do texto */
-    text-align: center;             /* centraliza o texto */
-    color: #1b5e20;                 /* cor do texto */
-}
 
 /* =========================
    Área que contém os retângulos
    ========================= */
-.retangulos{
-    display: flex;                  /* ativa Flexbox */
-    justify-content: space-between; /* distribui os itens horizontalmente */
-    align-items: center;            /* centraliza verticalmente */
-    gap: 40px;                      /* espaço entre os itens */
-    padding: 40px 80px;             /* espaçamento interno */
+.container-botao {
+  margin-top: auto;      /* empurra para baixo */
+  margin-bottom: auto;   /* impede de colar no rodapé */
+
+  display: flex;
+  justify-content: center;
+  gap: 200px;
+
+  padding: 40px 80px;
 }
 
 /* =========================
    Estilo de cada retângulo
    ========================= */
-.retangulo{
+.botao{
     width: 500px;                   /* largura do retângulo */
-    height: 50px;                   /* altura do retângulo */
-    background-color: #2e7d32;      /* cor de fundo */
+    height: 60px;                   /* altura do retângulo */
+    background-color: #673DA0;      /* cor de fundo */
 
     display: flex;                  /* ativa Flexbox */
     justify-content: center;        /* centraliza horizontalmente */
@@ -87,6 +105,8 @@ h1{
     color: white;                   /* cor do texto */
     font-weight: bold;              /* texto em negrito */
 }
+
+
 
 /* =========================
    Estilo dos links
@@ -99,18 +119,33 @@ a{
 /* =========================
    Rodapé da página
    ========================= */
-footer{
-    display: flex;              /* Ativa o Flexbox para alinhar o conteúdo */
-    width: 100%;                /* Ocupa toda a largura da tela */
-    min-height: 70px;           /* Altura mínima do footer (cresce se o texto aumentar) */
-    padding: 10px;              /* Espaço interno para não colar o texto nas bordas */
-    background-color: #2e7d32;      /* Cor de fundo do footer */
-    color: white;             /* Cor do texto */
-    font-size: 14pt;            /* Tamanho da fonte */
-    text-align: center;         /* Centraliza o texto */
-    align-items: center;        /* Centraliza verticalmente o conteúdo */
-    justify-content: center;    /* Centraliza horizontalmente o conteúdo */
-    flex-wrap: wrap;            /* Permite quebra de linha e evita divisão do texto */
+footer {
+  position: fixed;
+  bottom: 0;          /* 🔹 fixa no pé da tela */
+  left: 0;            /* 🔹 garante alinhamento total */
+  z-index: 100;       /* 🔹 fica acima do conteúdo */
+
+  display: flex;
+  width: 100%;
+  padding: 10px;
+
+  background-color: #5177e19a;
+  backdrop-filter: blur(6px);
+
+  color: rgb(0, 0, 0);
+  font-size: 12pt;
+  text-align: center;
+
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  box-sizing: border-box; /* evita estouro de largura */
 }
+
+footer p {
+  margin: 2px 0;
+}
+
 
 
