@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+/* CÉU */
+.ceu {
+  position: fixed;
+  inset: 0;
+  background: url("../images/ceu01.jpg") center/cover no-repeat;
+  z-index: 1;
+}
+
+/* ÁGUA */
+.agua, .agua2 {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 200%; /* maior que a tela para movimento contínuo */
+  height: 180px;
+  background-image: url("../images/AGUA.png"); /* troque por uma onda tileable se possível */
+  background-size: auto 180px;
+  background-repeat: repeat-x;
+  z-index: 3;
+  animation: moverAgua 150s linear infinite; /* mais lenta para movimento natural */
+}
+
+.agua2 {
+  left: -100%; /* segunda camada cobre qualquer gap */
+}
+
+@keyframes moverAgua {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* move metade da largura para suavizar */
+}
+
+/* BARCO */
+.barco {
+  position: fixed;
+  bottom: 150px; /* leve ajuste para encostar na água */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 260px;
+  z-index: 4;
+  animation: barcoFlutua 3s ease-in-out infinite alternate;
+}
+
+@keyframes barcoFlutua {
+  0% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-10px); }
+  100% { transform: translateX(-50%) translateY(0); }
+}
+
+/* LOGO SOBRE O BARCO */
+.logo {
+  position: fixed;
+  bottom: 300px; /* logo mais acima das ondas */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 180px;
+  z-index: 5;
+}

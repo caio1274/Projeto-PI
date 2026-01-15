@@ -3,44 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="shortcut icon" href="Imagens/logo-fivecon.png" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
-
     <title>Opções</title>
 </head>
-<body>
-
+<body class="index-page">
 <main>
-    <div class="decima">
+    <div class="barra-superior">
         <img src="icones/configuração.png" alt="configuração">
         <img src="icones/perfil.png" alt="perfil">
     </div>
 
     <div class="principal">
-        <img src="Imagens/logo.png" alt="logo">
+        <img src="Imagens-logo/LOGO.png" alt="Logo" class="img-logo">
     </div>
 
-    <section class="retangulos coluna">
-        <a href="#">
-            <div class="retangulo"
+    <section class="container-botao">
+        <a href="LiaIA.html">
+            <div class="botao"
                  onmouseenter="entrou(this)"
                  onmouseout="sair(this)">
                 Anônimo
             </div>
         </a>
-
-        <div class="retangulo"
-             onmouseenter="entrou(this)"
-             onmouseout="sair(this)">
-            Entrar
-        </div>
+        <a href="login.html">
+            <div class="botao"
+                 onmouseenter="entrou(this)"
+                 onmouseout="sair(this)">
+                Entrar
+            </div>
+        </a>
     </section>
 
     <h1 class="h1">Bem-vindo ao Calmind</h1>
     <p class="paragafo1">Um espaço para cuidar da sua mente!</p>
+    <script src="js/script.js"></script>
+    <script src="js/five.js"></script>
 </main>
-
-<script src="script.js"></script>
 </body>
 </html>
