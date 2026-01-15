@@ -1,141 +1,169 @@
-/* RESET */
+/* Seletor universal: aplica em TODOS os elementos da página */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  margin: 0;                 /* Remove margem padrão dos navegadores */
+  padding: 0;                /* Remove espaçamento interno padrão */
+  box-sizing: border-box;    /* Inclui padding e borda no tamanho total */
+  font-family: Arial, sans-serif; /* Define a fonte padrão do site */
 }
 
-/* Fundo animado */
+/* Estilo aplicado ao body quando ele tem a classe chat-page */
 body.chat-page {
-  min-height: 100vh;
-  background: linear-gradient(135deg, #afdfee, #e9ddf5);
-  overflow: hidden;
+  min-height: 100vh;         /* Garante altura mínima igual à tela */
+  background: linear-gradient(135deg, #afdfee, #e9ddf5); /* Fundo em degradê */
+  overflow: hidden;          /* Impede rolagem da página */
 }
 
-/* Barra superior */
+/* Barra fixa no topo da página */
 .barra-superior {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  position: fixed;           /* Fixa o elemento na tela */
+  top: 0;                    /* Alinha ao topo */
+  left: 0;                   /* Alinha à esquerda */
+  right: 0;                  /* Alinha à direita */
 
-  display: flex;
-  justify-content: space-between;
-  padding: 12px 16px;
-  z-index: 10;
+  display: flex;             /* Ativa o flexbox */
+  justify-content: space-between; /* Espaça os itens horizontalmente */
+  align-items: center;       /* Centraliza verticalmente */
+
+  padding: 20px 32px;        /* Espaçamento interno */
+  height: 80px;              /* Altura da barra */
+
+  background: rgba(255,255,255,0.6); /* Fundo branco transparente */
+  backdrop-filter: blur(8px); /* Aplica desfoque no fundo */
+  z-index: 10;               /* Mantém acima de outros elementos */
 }
 
-/* Wrapper */
+/* Container principal do chat */
 .chat-wrapper {
-  margin: 80px auto 30px;
-  max-width: 900px;
-  height: calc(100vh - 120px);
+  margin: 120px auto 30px;   /* Espaçamento externo */
+  max-width: 1100px;         /* Largura máxima */
+  height: calc(100vh - 160px); /* Altura baseada na tela */
 
-  display: flex;
-  flex-direction: column;
+  display: flex;             /* Usa flexbox */
+  flex-direction: column;    /* Organiza em coluna */
 
-  border-radius: 16px;
-  backdrop-filter: blur(8px);
-  background: rgba(255,255,255,0.55);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  border-radius: 20px;       /* Bordas arredondadas */
+  backdrop-filter: blur(8px); /* Desfoque no fundo */
+  background: rgba(255,255,255,0.65); /* Fundo translúcido */
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15); /* Sombra */
 }
 
-/* Header */
+/* Cabeçalho do chat */
 .chat-header {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 16px;
-  border-bottom: 1px solid rgba(0,0,0,0.1);
+  display: flex;             /* Flexbox */
+  align-items: center;       /* Centraliza verticalmente */
+  gap: 16px;                 /* Espaço entre itens */
+
+  padding: 20px;             /* Espaçamento interno */
+  border-bottom: 1px solid rgba(0,0,0,0.1); /* Linha inferior */
 }
 
+/* Logo exibida no cabeçalho */
 .chat-logo {
-  width: 45px;
+  width: 55px;               /* Define largura da imagem */
 }
 
+/* Título do chat */
 .chat-header h2 {
-  color: #673DA0;
+  color: #673DA0;            /* Cor do texto */
+  font-size: 22px;           /* Tamanho da fonte */
 }
 
+/* Texto de status (ex: online) */
 .status {
-  margin-left: auto;
-  color: green;
-  font-size: 14px;
+  margin-left: auto;         /* Empurra para o lado direito */
+  color: green;              /* Cor verde */
+  font-size: 15px;           /* Tamanho da fonte */
+  font-weight: bold;         /* Texto em negrito */
 }
 
-/* Área mensagens */
+/* Área onde aparecem as mensagens */
 .chat-area {
-  flex: 1;
-  padding: 20px;
-  overflow-y: auto;
+  flex: 1;                   /* Ocupa o espaço restante */
+  padding: 28px;             /* Espaçamento interno */
+  overflow-y: auto;          /* Scroll vertical */
 }
 
-/* Mensagens */
+/* Container de cada mensagem */
 .msg {
-  display: flex;
-  margin-bottom: 16px;
+  display: flex;             /* Flexbox */
+  margin-bottom: 18px;       /* Espaço entre mensagens */
 }
 
+/* Mensagem enviada pelo bot */
 .msg.bot {
-  justify-content: flex-start;
+  justify-content: flex-start; /* Alinha à esquerda */
 }
 
+/* Mensagem enviada pelo usuário */
 .msg.user {
-  justify-content: flex-end;
+  justify-content: flex-end;  /* Alinha à direita */
 }
 
+/* Avatar (ícone ou emoji) */
 .avatar {
-  margin-right: 8px;
-  font-size: 22px;
+  margin-right: 10px;        /* Espaço à direita */
+  font-size: 26px;           /* Tamanho do ícone */
 }
 
-/* Bolhas */
+/* Bolha de mensagem */
 .bubble {
-  max-width: 70%;
-  padding: 12px 16px;
-  border-radius: 16px;
-  font-size: 15px;
+  max-width: 75%;            /* Largura máxima */
+  padding: 16px 20px;        /* Espaçamento interno */
+  border-radius: 18px;       /* Bordas arredondadas */
+  font-size: 16px;           /* Tamanho do texto */
+  line-height: 1.4;          /* Altura da linha */
 }
 
+/* Estilo da bolha do bot */
 .msg.bot .bubble {
-  background: #673DA0;
-  color: white;
-  border-bottom-left-radius: 6px;
+  background: #673DA0;       /* Fundo roxo */
+  color: white;              /* Texto branco */
+  border-bottom-left-radius: 6px; /* Canto inferior diferente */
 }
 
+/* Estilo da bolha do usuário */
 .msg.user .bubble {
-  background: #e5e5e5;
-  color: #000;
-  border-bottom-right-radius: 6px;
+  background: #e5e5e5;       /* Fundo cinza */
+  color: #000;               /* Texto preto */
+  border-bottom-right-radius: 6px; /* Canto inferior diferente */
 }
 
-/* Input */
+/* Área onde fica o input e o botão */
 .chat-input-area {
-  display: flex;
-  gap: 10px;
-  padding: 16px;
-  border-top: 1px solid rgba(0,0,0,0.1);
+  display: flex;             /* Flexbox */
+  gap: 14px;                 /* Espaço entre input e botão */
+
+  padding: 20px;             /* Espaçamento interno */
+  border-top: 1px solid rgba(0,0,0,0.1); /* Linha superior */
 }
 
+/* Campo de texto */
 .chat-input-area input {
-  flex: 1;
-  padding: 12px;
-  border-radius: 10px;
-  border: 2px solid #673DA0;
-  outline: none;
+  flex: 1;                   /* Ocupa o máximo de espaço */
+  padding: 16px;             /* Espaçamento interno */
+  border-radius: 12px;       /* Bordas arredondadas */
+  border: 2px solid #673DA0; /* Borda roxa */
+  outline: none;             /* Remove contorno padrão */
+  font-size: 16px;           /* Tamanho do texto */
 }
 
+/* Botão de enviar */
 .chat-input-area button {
-  padding: 12px 24px;
-  border: none;
-  border-radius: 10px;
-  background: #673DA0;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
+  padding: 16px 36px;        /* Espaçamento interno */
+  border: none;              /* Remove borda padrão */
+  border-radius: 12px;       /* Bordas arredondadas */
+
+  background: #673DA0;       /* Fundo roxo */
+  color: white;              /* Texto branco */
+  font-weight: bold;         /* Texto em negrito */
+  font-size: 16px;           /* Tamanho do texto */
+
+  cursor: pointer;           /* Cursor de clique */
+  transition: 0.2s;          /* Animação suave */
 }
 
+/* Efeito ao passar o mouse no botão */
 .chat-input-area button:hover {
-  background: #5b2e99;
+  background: #5b2e99;       /* Cor mais escura */
+  transform: scale(1.05);    /* Aumenta levemente */
 }

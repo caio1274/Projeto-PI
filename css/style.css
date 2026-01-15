@@ -104,7 +104,7 @@ main {
    ========================= */
 .botao{
     width: 500px;                   /* largura do retângulo */
-    height: 60px;                   /* altura do retângulo */
+    height: 100px;                   /* altura do retângulo   z*/
     background-color: #673DA0;      /* cor de fundo */
 
     display: flex;                  /* ativa Flexbox */

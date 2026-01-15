@@ -1,0 +1,85 @@
+/* Reset geral */
+* {
+  margin: 0; /* Remove margens padrão */
+  padding: 0; /* Remove espaçamentos padrão */
+  box-sizing: border-box; /* Inclui borda e padding no cálculo do tamanho */
+}
+
+/* Corpo da página */
+body {
+  width: 100vw; /* Largura total da janela */
+  height: 100vh; /* Altura total da janela */
+  overflow: hidden; /* Esconde barras de rolagem */
+  font-family: Arial, sans-serif; /* Define a fonte padrão */
+}
+
+/* CÉU */
+.ceu {
+  position: fixed; /* Fixa o fundo na tela */
+  inset: 0; /* Ocupa toda a tela */
+  background: url("../images/ceu01.jpg") center/cover no-repeat; /* Imagem centralizada e ajustada */
+  z-index: 1; /* Camada mais ao fundo */
+}
+
+/* ÁGUA */
+.agua, .agua2 {
+  position: fixed; /* Fixa a água na tela */
+  bottom: 0; /* Alinha na parte inferior */
+  left: 0; /* Começa da esquerda */
+  width: 200%; /* Largura maior que a tela para animação */
+  height: 180px; /* Altura da água */
+  background-image: url("../images/AGUA.png"); /* Imagem da água */
+  background-size: auto 180px; /* Ajusta a altura da imagem */
+  background-repeat: repeat-x; /* Repete horizontalmente */
+  z-index: 3; /* Fica acima do céu */
+  animation: moverAgua 150s linear infinite; /* Animação contínua */
+}
+
+/* Segunda camada da água */
+.agua2 {
+  left: -100%; /* Começa deslocada para evitar espaços vazios */
+}
+
+/* Animação da água */
+@keyframes moverAgua {
+  0% { 
+    transform: translateX(0); /* Posição inicial */
+  }
+  100% { 
+    transform: translateX(-50%); /* Move horizontalmente */
+  }
+}
+
+/* BARCO */
+.barco {
+  position: fixed; /* Fixa o barco na tela */
+  bottom: 180px; /* Distância da parte inferior */
+  left: 50%; /* Centraliza horizontalmente */
+  transform: translateX(-50%); /* Ajuste fino da centralização */
+  width: 380px; /* Largura do barco */
+  z-index: 4; /* Fica acima da água */
+  animation: barcoFlutua 3s ease-in-out infinite alternate; /* Animação de flutuação */
+}
+
+/* Animação do barco */
+@keyframes barcoFlutua {
+  0% { 
+    transform: translateX(-50%) translateY(0); /* Posição inicial */
+  }
+  50% { 
+    transform: translateX(-50%) translateY(-15px); /* Sobe levemente */
+  }
+  100% { 
+    transform: translateX(-50%) translateY(0); /* Retorna à posição */
+  }
+}
+
+/* LOGO */
+.logo {
+  position: fixed; /* Fixa a logo na tela */
+  bottom: 380px; /* Altura em relação ao fundo */
+  left: 50%; /* Centraliza horizontalmente */
+  transform: translateX(-50%); /* Ajuste da centralização */
+  width: 260px; /* Tamanho da logo */
+  z-index: 5; /* Fica acima de todos os elementos */
+}
