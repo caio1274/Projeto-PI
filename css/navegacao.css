@@ -13,7 +13,7 @@
 body.pagina-menu {
   min-height: 100vh;
   font-family: Arial, sans-serif;
-background: linear-gradient(135deg,#2980b9, #673DA0); /* Fundo em degradê */
+background: linear-gradient(125deg,#87ceeb 0%,#6bb9f0 40%, #673DA0,#4a307a); /* Fundo em degradê */
 }
 
 /* =========================
@@ -126,7 +126,7 @@ background: linear-gradient(135deg,#2980b9, #673DA0); /* Fundo em degradê */
    ========================= */
 .texto-botao {
   width: 360px;
-  height: 90px;
+  height: 50px;
   background: linear-gradient(
     135deg,
     #6a0dad,
