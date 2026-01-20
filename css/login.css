@@ -12,7 +12,7 @@ body {
   display: flex; /* Ativa flexbox */
   justify-content: center; /* Centraliza horizontalmente */
   align-items: center; /* Centraliza verticalmente */
-  background: linear-gradient(135deg, #673DA0, #2980b9); /* Fundo em degradê */
+  background: linear-gradient(135deg, #6dd5fa, #2980b9); /* Fundo em degradê */
 }
 
 /* Container principal */
