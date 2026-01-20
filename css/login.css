@@ -1,91 +1,97 @@
 /* Reset básico */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Arial', sans-serif;
+  margin: 0; /* Remove margens padrão */
+  padding: 0; /* Remove espaçamento interno padrão */
+  box-sizing: border-box; /* Inclui borda e padding no cálculo do tamanho */
+  font-family: 'Arial', sans-serif; /* Define a fonte padrão */
 }
 
-/* Fundo da página */
+/* Corpo da página */
 body {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(135deg, #6dd5fa, #2980b9);
+  height: 100vh; /* Altura total da tela */
+  display: flex; /* Ativa flexbox */
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  background: linear-gradient(135deg, #673DA0, #2980b9); /* Fundo em degradê */
 }
 
-/* Container central do login */
+/* Container principal */
 .login-page {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100%; /* Largura total */
+  height: 100%; /* Altura total */
+  display: flex; /* Flexbox */
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
 }
 
-/* Caixa do login */
+/* Caixa de login */
 .login-box {
-  background: rgba(255, 255, 255, 0.9);
-  padding: 40px 50px;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-  text-align: center;
-  width: 450px;
+  background: rgba(255, 255, 255, 0.95); /* Fundo branco quase sólido */
+  padding: 60px 70px; /* Espaçamento interno */
+  border-radius: 20px; /* Bordas arredondadas */
+  box-shadow: 0 15px 40px rgba(0,0,0,0.25); /* Sombra */
+  text-align: center; /* Centraliza o conteúdo */
+  width: 550px; /* Largura da caixa */
 }
 
 /* Logo */
 .login-logo {
-  width: 120px;
-  margin-bottom: 20px;
+  width: 160px; /* Tamanho da imagem */
+  margin-bottom: 30px; /* Espaço inferior */
 }
 
 /* Título */
 .login-box h2 {
-  margin-bottom: 25px;
-  color: #2980b9;
+  margin-bottom: 35px; /* Espaço abaixo do título */
+  color: #2980b9; /* Cor do texto */
+  font-size: 32px; /* Tamanho da fonte */
 }
 
-/* Inputs */
+/* Campos de entrada */
 .login-box input {
-  width: 100%;
-  padding: 12px 15px;
-  margin-bottom: 20px;
-  border: 2px solid #2980b9;
-  border-radius: 8px;
-  outline: none;
-  font-size: 16px;
+  width: 100%; /* Ocupa toda a largura */
+  padding: 18px 20px; /* Espaçamento interno */
+  margin-bottom: 25px; /* Espaço entre os campos */
+  border: 2px solid #2980b9; /* Borda azul */
+  border-radius: 10px; /* Bordas arredondadas */
+  outline: none; /* Remove contorno */
+  font-size: 18px; /* Tamanho da fonte */
 }
 
 /* Botão */
 .login-box button {
-  width: 100%;
-  padding: 12px;
-  background-color: #2980b9;
-  border: none;
-  border-radius: 8px;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
+  width: 100%; /* Largura total */
+  padding: 18px; /* Espaçamento interno */
+  background-color: #2980b9; /* Cor de fundo */
+  border: none; /* Remove borda */
+  border-radius: 10px; /* Bordas arredondadas */
+  color: white; /* Cor do texto */
+  font-weight: bold; /* Texto em negrito */
+  font-size: 20px; /* Tamanho da fonte */
+  cursor: pointer; /* Cursor de clique */
+  transition: 0.3s; /* Animação suave */
 }
 
+/* Efeito ao passar o mouse */
 .login-box button:hover {
-  background-color: #2173a3;
+  background-color: #2173a3; /* Altera a cor */
 }
 
-/* Link de cadastro */
+/* Texto de cadastro */
 .cadastro-link {
-  margin-top: 15px;
-  font-size: 14px;
+  margin-top: 25px; /* Espaço acima */
+  font-size: 16px; /* Tamanho da fonte */
 }
 
+/* Link */
 .cadastro-link a {
-  color: #2980b9;
-  font-weight: bold;
-  text-decoration: none;
+  color: #2980b9; /* Cor do link */
+  font-weight: bold; /* Texto em negrito */
+  font-size: 17px; /* Tamanho da fonte */
+  text-decoration: none; /* Remove sublinhado */
 }
 
+/* Hover do link */
 .cadastro-link a:hover {
-  text-decoration: underline;
+  text-decoration: underline; /* Adiciona sublinhado */
 }
