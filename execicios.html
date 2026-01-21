@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!-- Define o tipo do documento como HTML5 -->
+<html lang="pt-BR">
+<!-- Define o idioma do site como português do Brasil -->
+
+<head>
+  <meta charset="UTF-8">
+  <!-- Permite usar acentos e caracteres especiais -->
+  <link rel="stylesheet" href="css/execicios.css">
+  <title>Calmid</title>
+  <link rel="shortcut icon" href="Imagens-logo/LOGO-fivecon.png" type="image/x-icon">
+  <!-- Título que aparece na aba do navegador -->
+
+</head>
+
+<body>
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="logo">CALMID</div>
+    <!-- Nome do site -->
+
+    <div class="search">
+      <input type="text" placeholder="Buscar Exercicios">
+      <span>🔍</span>
+    </div>
+
+    <div class="header-actions">
+      <div class="btn">🤍 Meus Exercicios</div>
+    </div>
+  </header>
+
+  <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+  <main>
+
+    <!-- FILEIRA DE CIMA -->
+    <h2>Exercicios em Destaque</h2>
+
+    <div class="carousel-container">
+      <!-- Botão para mover o carrossel para a esquerda -->
+      <button class="nav left" onclick="scrollCarousel('cima', -1)">◀</button>
+
+      <div class="carousel" id="cima">
+        <!-- JavaScript gera 15 cards automaticamente -->
+        <script>
+          for (let i = 1; i <= 15; i++) {
+            document.write(`
+              <div class="game-card">
+                <img src="imagens-utilizadas/yoga.jpg">
+                <div class="game-name">Exercicio ${i}</div>
+              </div>
+            `);
+          }
+        </script>
+      </div>
+
+      <!-- Botão para mover o carrossel para a direita -->
+      <button class="nav right" onclick="scrollCarousel('cima', 1)">▶</button>
+    </div>
+
+    <!-- FILEIRA DE BAIXO -->
+    <h2>Mais Exercicios</h2>
+
+    <div class="carousel-container">
+      <button class="nav left" onclick="scrollCarousel('baixo', -1)">◀</button>
+
+      <div class="carousel" id="baixo">
+        <script>
+          for (let i = 16; i <= 30; i++) {
+            document.write(`
+              <div class="game-card">
+                <img src="imagens-utilizadas/respirando.png">
+                <div class="game-name">Exercicio ${i}</div>
+              </div>
+            `);
+          }
+        </script>
+      </div>
+
+      <button class="nav right" onclick="scrollCarousel('baixo', 1)">▶</button>
+    </div>
+
+  </main>
+
+  <!-- ===== JAVASCRIPT ===== -->
+  <script>
+    /* Função que move o carrossel */
+    function scrollCarousel(id, direction) {
+      const carousel = document.getElementById(id); /* Pega o carrossel pelo ID */
+      carousel.scrollBy({
+        left: 300 * direction, /* Move para esquerda ou direita */
+        behavior: "smooth"     /* Animação suave */
+      });
+    }
+  </script> 
+</body>
+</html>
