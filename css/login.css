@@ -1,97 +1,67 @@
-/* Reset básico */
+/* Reset básico: remove margens e espaçamentos padrão dos navegadores
+   e define uma fonte padrão para toda a página */
 * {
-  margin: 0; /* Remove margens padrão */
-  padding: 0; /* Remove espaçamento interno padrão */
-  box-sizing: border-box; /* Inclui borda e padding no cálculo do tamanho */
-  font-family: 'Arial', sans-serif; /* Define a fonte padrão */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Faz com que padding e borda sejam incluídos no tamanho total */
+    font-family: Arial, sans-serif; /* Fonte padrão */
 }
 
 /* Corpo da página */
 body {
-  height: 100vh; /* Altura total da tela */
-  display: flex; /* Ativa flexbox */
-  justify-content: center; /* Centraliza horizontalmente */
-  align-items: center; /* Centraliza verticalmente */
-  background: linear-gradient(135deg, #6dd5fa, #2980b9); /* Fundo em degradê */
-}
-
-/* Container principal */
-.login-page {
-  width: 100%; /* Largura total */
-  height: 100%; /* Altura total */
-  display: flex; /* Flexbox */
-  justify-content: center; /* Centraliza horizontalmente */
-  align-items: center; /* Centraliza verticalmente */
+    display: flex; /* Ativa o Flexbox para organizar elementos */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    height: 100vh; /* Ocupa 100% da altura da tela */
+    background: linear-gradient(135deg, #1e90ff, #00bfff); /* Fundo em degradê azul */
 }
 
 /* Caixa de login */
 .login-box {
-  background: rgba(255, 255, 255, 0.95); /* Fundo branco quase sólido */
-  padding: 60px 70px; /* Espaçamento interno */
-  border-radius: 20px; /* Bordas arredondadas */
-  box-shadow: 0 15px 40px rgba(0,0,0,0.25); /* Sombra */
-  text-align: center; /* Centraliza o conteúdo */
-  width: 550px; /* Largura da caixa */
+    background: #fff; /* Fundo branco */
+    padding: 40px; /* Espaçamento interno */
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* Sombra para dar profundidade */
+    width: 350px; /* Largura fixa da caixa */
+    text-align: center; /* Centraliza o conteúdo dentro da caixa */
 }
 
-/* Logo */
-.login-logo {
-  width: 160px; /* Tamanho da imagem */
-  margin-bottom: 30px; /* Espaço inferior */
+/* Logo dentro da caixa */
+.logo {
+    width: 100px; /* Define largura da imagem da logo */
+    margin-bottom: 20px; /* Espaço abaixo da logo */
 }
 
-/* Título */
-.login-box h2 {
-  margin-bottom: 35px; /* Espaço abaixo do título */
-  color: #2980b9; /* Cor do texto */
-  font-size: 32px; /* Tamanho da fonte */
-}
-
-/* Campos de entrada */
+/* Campos de texto (usuário e senha) */
 .login-box input {
-  width: 100%; /* Ocupa toda a largura */
-  padding: 18px 20px; /* Espaçamento interno */
-  margin-bottom: 25px; /* Espaço entre os campos */
-  border: 2px solid #2980b9; /* Borda azul */
-  border-radius: 10px; /* Bordas arredondadas */
-  outline: none; /* Remove contorno */
-  font-size: 18px; /* Tamanho da fonte */
+    width: 100%; /* Ocupa toda a largura disponível */
+    padding: 10px; /* Espaçamento interno para conforto na digitação */
+    margin: 10px 0; /* Espaço entre os campos */
+    border: 2px solid #1e90ff; /* Bordas azuis */
+    border-radius: 5px; /* Bordas arredondadas */
+    font-size: 16px; /* Tamanho da fonte maior para melhor leitura */
 }
 
-/* Botão */
+/* Botão de login */
 .login-box button {
-  width: 100%; /* Largura total */
-  padding: 18px; /* Espaçamento interno */
-  background-color: #2980b9; /* Cor de fundo */
-  border: none; /* Remove borda */
-  border-radius: 10px; /* Bordas arredondadas */
-  color: white; /* Cor do texto */
-  font-weight: bold; /* Texto em negrito */
-  font-size: 20px; /* Tamanho da fonte */
-  cursor: pointer; /* Cursor de clique */
-  transition: 0.3s; /* Animação suave */
+    width: 100%; /* Ocupa toda a largura */
+    padding: 12px; /* Espaçamento interno */
+    background: #673DA0; /* Cor de fundo roxa */
+    color: #fff; /* Texto branco */
+    font-weight: bold; /* Texto em negrito */
+    border: none; /* Remove borda padrão */
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer; /* Mostra a mãozinha ao passar o mouse */
+    transition: 0.3s; /* Suaviza a mudança de cor no hover */
 }
 
-/* Efeito ao passar o mouse */
-.login-box button:hover {
-  background-color: #2173a3; /* Altera a cor */
+/* Links dentro da caixa (ex: "Cadastre-se") */
+.login-box a {
+    color: #1e90ff; /* Azul */
+    text-decoration: none; /* Remove sublinhado padrão */
 }
 
-/* Texto de cadastro */
-.cadastro-link {
-  margin-top: 25px; /* Espaço acima */
-  font-size: 16px; /* Tamanho da fonte */
-}
-
-/* Link */
-.cadastro-link a {
-  color: #2980b9; /* Cor do link */
-  font-weight: bold; /* Texto em negrito */
-  font-size: 17px; /* Tamanho da fonte */
-  text-decoration: none; /* Remove sublinhado */
-}
-
-/* Hover do link */
-.cadastro-link a:hover {
-  text-decoration: underline; /* Adiciona sublinhado */
+/* Efeito ao passar o mouse no link */
+.login-box a:hover {
+    text-decoration: underline; /* Adiciona sublinhado */
 }

@@ -1,161 +1,134 @@
-/* =========================
-   RESET
-   ========================= */
+/* RESET: remove estilos padrão do navegador */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  margin: 0;                 /* remove margens */
+  padding: 0;                /* remove espaçamentos internos */
+  box-sizing: border-box;    /* inclui borda e padding no tamanho total */
 }
 
-/* =========================
-   BODY – FUNDO CÉU
-   ========================= */
+/* BODY: configura o visual geral da página */
 body.pagina-menu {
-  min-height: 100vh;
-  font-family: Arial, sans-serif;
-background: linear-gradient(125deg,#87ceeb 0%,#6bb9f0 40%, #673DA0,#4a307a); /* Fundo em degradê */
+  min-height: 100vh;         /* altura mínima igual à altura da tela */
+  font-family: Arial, sans-serif; /* define a fonte do texto */
+  background: linear-gradient(
+    125deg,
+    #87ceeb 0%,
+    #6bb9f0 40%,
+    #673DA0,
+    #4a307a
+  ); /* fundo em degradê */
 }
 
-/* =========================
-   TOPO
-   ========================= */
+/* TOPO: barra superior da página */
 .topo-menu {
-  width: 100%;
-  height: 48px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 24px;
+  width: 100%;               /* ocupa toda a largura */
+  height: 48px;              /* altura fixa */
+  display: flex;             /* ativa o Flexbox */
+  justify-content: space-between; /* separa os itens */
+  align-items: center;       /* centraliza verticalmente */
+  padding: 0 24px;           /* espaçamento lateral */
 }
 
+/* IMAGEM DO TOPO */
 .topo-menu img {
-  width: 26px;
-  cursor: pointer;
+  width: 26px;               /* define o tamanho da imagem */
+  cursor: pointer;           /* muda o cursor para “mãozinha” */
 }
 
-/* =========================
-   BUSCA
-   ========================= */
+/* BUSCA: área do input */
 .busca-menu {
   width: 100%;
-  display: flex;
-  justify-content: center;  
-  margin-top: -40px;
+  display: flex;             /* usa Flexbox */
+  justify-content: center;   /* centraliza horizontalmente */
+  margin-top: -40px;         /* move o elemento para cima */
 }
 
+/* INPUT DE BUSCA */
 .busca-menu input {
-  width: 440px;
-  max-width: 90%;
-  height: 46px;
-  border-radius: 25px;
-  border: none;
-  padding: 0 22px;
-  outline: none;
+  width: 440px;              /* largura do input */
+  max-width: 90%;            /* limite em telas menores */
+  height: 46px;              /* altura */
+  border-radius: 25px;       /* bordas arredondadas */
+  border: none;              /* remove a borda padrão */
+  padding: 0 22px;           /* espaço interno do texto */
+  outline: none;             /* remove contorno ao clicar */
 }
 
-/* =========================
-   LOGO
-   ========================= */
+/* LOGO CENTRAL */
 .logo-menu {
-  display: block;
-  max-width: 330px;
-  margin: 35px auto;
+  display: block;            /* permite usar margin auto */
+  max-width: 330px;          /* largura máxima */
+  margin: 35px auto;         /* centraliza horizontalmente */
 }
 
-/* =========================
-   CONTEÚDO
-   ========================= */
+/* CONTEÚDO PRINCIPAL */
 .conteudo-menu {
   width: 100%;
-  display: flex;
-  justify-content: center;
+  display: flex;             /* Flexbox */
+  justify-content: center;   /* centraliza o conteúdo */
 }
 
-/* =========================
-   GRID – ESPAÇAMENTO GRANDE
-   ========================= */
+/* GRADE DE BOTÕES */
 .grade-botoes {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-
-  /* ESPAÇO ENTRE UMA IMAGEM E OUTRA */
-  column-gap: 140px; /* largura */
-  row-gap: 140px;    /* altura */
-
-  max-width: 1300px;
-  margin: 80px auto 140px;
+  display: grid;             /* ativa o Grid */
+  grid-template-columns: repeat(2, 1fr); /* 2 colunas iguais */
+  column-gap: 140px;         /* espaço entre colunas */
+  row-gap: 140px;            /* espaço entre linhas */
+  max-width: 1300px;         /* largura máxima */
+  margin: 80px auto 140px;   /* centraliza e espaça */
 }
 
-/* =========================
-   LINK
-   ========================= */
+/* LINK */
 .link-botao {
-  text-decoration: none;
+  text-decoration: none;     /* remove sublinhado */
 }
 
-/* =========================
-   CARD FLUTUANTE
-   ========================= */
+/* BOTÃO: imagem + texto */
 .botao-menu {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  animation: flutuar 4s ease-in-out infinite;
+  display: flex;             /* Flexbox */
+  flex-direction: column;    /* organiza em coluna */
+  align-items: center;       /* centraliza os itens */
+  animation: flutuar 4s ease-in-out infinite; /* animação contínua */
 }
 
-/* =========================
-   IMAGEM RETANGULAR GRANDE
-   ========================= */
+/* IMAGEM DO BOTÃO */
 .img-botao {
   width: 360px;
   height: 200px;
-  object-fit: cover;
-  border-radius: 22px;
-  margin-bottom: 26px;
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  object-fit: cover;         /* preenche sem distorcer */
+  border-radius: 22px;       /* bordas arredondadas */
+  margin-bottom: 26px;       /* espaço abaixo da imagem */
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.35); /* sombra */
+  transition:                /* anima mudanças suavemente */
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
+/* HOVER: efeito ao passar o mouse */
 .botao-menu:hover .img-botao {
-  transform: translateY(-10px) scale(1.05);
-  box-shadow: 0 30px 65px rgba(0, 0, 0, 0.5);
+  transform: translateY(-10px) scale(1.05); /* sobe e aumenta */
+  box-shadow: 0 30px 65px rgba(0, 0, 0, 0.5); /* sombra maior */
 }
 
-/* =========================
-   LEGENDA ROXA MAIOR
-   ========================= */
+/* TEXTO DO BOTÃO */
 .texto-botao {
   width: 360px;
   height: 50px;
-  background: linear-gradient(
-    135deg,
-    #6a0dad,
-    #8e44ad,
-    #9b59b6
-  );
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: linear-gradient(135deg, #6a0dad, #8e44ad, #9b59b6);
+  color: #ffffff;            /* cor do texto */
+  display: flex;             /* Flexbox */
+  align-items: center;       /* centraliza verticalmente */
+  justify-content: center;   /* centraliza horizontalmente */
   border-radius: 18px;
-  font-size: 19px;
-  font-weight: bold;
-  text-align: center;
+  font-size: 19px;           /* tamanho da fonte */
+  font-weight: bold;         /* texto em negrito */
+  text-align: center;        /* centraliza o texto */
   padding: 0 18px;
   box-shadow: 0 12px 32px rgba(88, 24, 124, 0.55);
 }
 
-/* =========================
-   ANIMAÇÃO DE FLUTUAÇÃO
-   ========================= */
+/* ANIMAÇÃO */
 @keyframes flutuar {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-12px);
-  }
-  100% {
-    transform: translateY(0);
-  }
+  0%   { transform: translateY(0); }     /* posição inicial */
+  50%  { transform: translateY(-12px); } /* sobe */
+  100% { transform: translateY(0); }     /* volta */
 }
