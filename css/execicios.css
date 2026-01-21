@@ -1,0 +1,154 @@
+    /* ===== RESET PADRÃO ===== */
+    * {
+      margin: 0;              /* Remove margens padrão */
+      padding: 0;             /* Remove espaçamentos padrão */
+      box-sizing: border-box; /* Evita que padding quebre o layout */
+      font-family: Arial, Helvetica, sans-serif; /* Fonte padrão */
+    }
+
+    /* ===== ESTILO DO CORPO DA PÁGINA ===== */
+    body {
+      /* Fundo em degradê azul para roxo */
+      background: linear-gradient(125deg, #87ceeb 0%, #6bb9f0 40%, #673DA0 70%, #4a307a 100%);
+      color: white; /* Cor padrão do texto */
+    }
+
+    /* ===== HEADER (TOPO DO SITE) ===== */
+    header {
+      background-color: rgba(51, 0, 255, 0.514); /* Fundo semi-transparente */
+      padding: 12px 20px; /* Espaçamento interno */
+      display: flex; /* Alinha os itens em linha */
+      align-items: center; /* Centraliza verticalmente */
+      gap: 20px; /* Espaço entre os elementos */
+    }
+
+    /* Logo do site */
+    .logo {
+      font-weight: bold; /* Texto em negrito */
+      font-size: 22px;   /* Tamanho da fonte */
+      white-space: nowrap; /* Impede quebra de linha */
+    }
+
+    /* Área da barra de busca */
+    .search {
+      flex: 1; /* Ocupa todo espaço disponível */
+      position: relative; /* Necessário para posicionar o ícone */
+    }
+
+    /* Campo de texto da busca */
+    .search input {
+      width: 100%; /* Ocupa toda a largura */
+      padding: 10px 40px 10px 15px; /* Espaçamento interno */
+      border-radius: 20px; /* Bordas arredondadas */
+      border: none; /* Remove borda */
+      outline: none; /* Remove contorno ao clicar */
+      background-color: #ffffff; /* Fundo branco */
+      color: rgb(196, 63, 63); /* Cor do texto digitado */
+    }
+
+    /* Ícone de lupa */
+    .search span {
+      position: absolute; /* Posiciona dentro do input */
+      right: 15px; /* Distância da direita */
+      top: 50%; /* Centraliza verticalmente */
+      transform: translateY(-50%);
+      cursor: pointer; /* Cursor de clique */
+    }
+
+    /* Área dos botões do header */
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    /* Botão padrão */
+    .btn {
+      background-color: #3b82f6; /* Azul */
+      padding: 8px 14px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    /* ===== CONTEÚDO PRINCIPAL ===== */
+    main {
+      padding: 20px; /* Espaçamento interno */
+    }
+
+    /* Títulos das seções */
+    h2 {
+      margin: 15px 0 10px;
+      font-size: 18px;
+    }
+
+    /* ===== CARROSSEL ===== */
+    .carousel-container {
+      position: relative;
+      display: flex;
+      align-items: center;
+      margin-bottom: 25px;
+    }
+
+    /* Área que contém os cards */
+    .carousel {
+      display: flex; /* Cards em linha */
+      gap: 15px; /* Espaço entre cards */
+      overflow-x: auto; /* Scroll horizontal */
+      scroll-behavior: smooth; /* Rolagem suave */
+      padding: 10px 0;
+    }
+
+    /* Remove a barra de rolagem visível */
+    .carousel::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Card individual do exercício */
+    .game-card {
+      min-width: 160px; /* Largura mínima */
+      background-color: #1e293b;
+      border-radius: 12px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.2s;
+      flex-shrink: 0; /* Impede o card de encolher */
+    }
+
+    /* Efeito ao passar o mouse */
+    .game-card:hover {
+      transform: scale(1.05);
+    }
+
+    /* Imagem do card */
+    .game-card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover; /* Ajusta a imagem sem distorcer */
+    }
+
+    /* Nome do exercício */
+    .game-name {
+      padding: 8px;
+      font-size: 13px;
+      text-align: center;
+    }
+
+    /* Botões de navegação do carrossel */
+    .nav {
+      background-color: rgba(0,0,0,0.6);
+      color: white;
+      border: none;
+      font-size: 22px;
+      padding: 8px 12px;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    .nav.left {
+      margin-right: 5px;
+    }
+
+    .nav.right {
+      margin-left: 5px;
+    }
