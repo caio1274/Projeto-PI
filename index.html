@@ -1,47 +1,48 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<!-- Define o tipo do documento como HTML5 -->
+<html lang="pt-BR">
+<!-- Início do documento HTML e define o idioma como português do Brasil -->
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Calmind</title>
+  <!-- Define a codificação de caracteres (acentos e símbolos) -->
+  <meta charset="UTF-8">
+
+  <!-- Título da aba do navegador -->
+  <title>Carregando...</title>
+
+  <!-- Importa o arquivo CSS responsável pelo visual da tela de carregamento -->
+  <link rel="stylesheet" href="css/carregando.css">
 </head>
-<body class="index-page">
 
-<main>
-    <div class="barra-superior">
-        <img src="icones/configuração.png" alt="configuração">
-        <img src="icones/perfil.png" alt="perfil">
-    </div>
+<body>
+  <!-- Corpo da página -->
 
-    <img src="Imagens-logo/LOGO.png" alt="Imagem centralizada" class="img-logo">
+  <!-- CÉU COM NUVENS (elemento visual animado via CSS) -->
+  <div class="ceu"></div>
 
-   <section class="container-botao">
+  <!-- ÁGUA (primeira camada do mar) -->
+  <div class="agua"></div>
 
-        <a href="accesso.html">
-            <div class="botao"
-                 onmouseenter="entrou(this)"
-                 onmouseout="sair(this)">
-                Ir para conversar com a LiaIA
-            </div>
-        </a>
+  <!-- ÁGUA (segunda camada para efeito de movimento) -->
+  <div class="agua agua2"></div>
 
-        <a href="navegação.html">
-            <div class="botao"
-                 onmouseenter="entrou(this)"
-                 onmouseout="sair(this)">
-                Ir para a página de navegação
-            </div>
-        </a>
-    </section>
-</main>
+  <!-- BARCO (imagem flutuando sobre a água) -->
+  <img src="images/BARCO.webp" class="barco">
 
-<footer>
-    <p>O Calmind é um site que oferece ajuda rápida em situações de crise de ansiedade, tristeza profunda ou apoio emocional. </p>
-    <p> <strong> A Lia é uma IA disponível 24h. Não substitui profissionais de saúde.</strong></p>
-</footer>
+  <!-- LOGO POSICIONADA SOBRE O BARCO -->
+  <img src="Imagens-logo/LOGO.png" class="logo">
 
-<script src="js/script.js"></script>
-<script src="js/five.js"></script>
+  <!-- SCRIPT PARA TROCAR DE PÁGINA AUTOMATICAMENTE -->
+  <script>
+    // Aguarda 5 segundos (5000 ms)
+    setTimeout(() => {
+      // Redireciona o usuário para a página principal
+      window.location.href = "index.html";
+    }, 5000);
+  </script>
+
+  <!-- Importa um arquivo JavaScript externo (ex: animações ou lógica extra) -->
+  <script src="js/five.js"></script>
+
 </body>
 </html>

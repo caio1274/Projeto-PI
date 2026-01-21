@@ -1,31 +1,35 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<!DOCTYPE html> <!-- Define que o documento segue o padrão HTML5 -->
+<html lang="pt-br"> <!-- Define o idioma da página como português do Brasil -->
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/login.css">
-  <title>Login</title>
+    <meta charset="UTF-8"> <!-- Permite uso de acentos e caracteres especiais -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Faz a página se adaptar a celulares/tablets -->
+    <title>Página de Login</title> <!-- Título que aparece na aba do navegador -->
+    <link rel="stylesheet" href="css/login.css"> <!-- Importa o arquivo CSS externo para estilizar -->
 </head>
 <body>
-  <div class="login-page">
-    <div class="login-box">
-      <img src="Imagens-logo/LOGO.png" alt="Logo" class="login-logo">
+    <!-- Container principal que centraliza tudo -->
+    <div class="login-page">
+        
+        <!-- Caixa branca com sombra e bordas arredondadas -->
+        <div class="login-box">
+            <img src="logo.png" alt="Logo" class="logo"> <!-- Logo da empresa -->
+            <h2>Login</h2> <!-- Título da caixa -->
 
-      <h2>Login</h2>
+            <!-- Formulário de login -->
+            <form onsubmit="irParaPagina(event)"> <!-- Ao enviar, chama a função JS irParaPagina -->
+                <input type="text" placeholder="Usuário" required> <!-- Campo de texto para usuário -->
+                <input type="password" placeholder="Senha" required> <!-- Campo de senha -->
+                <button type="submit" 
+                        onmouseover="entrou(this)" 
+                        onmouseout="sair(this)">Entrar</button> <!-- Botão que muda de cor ao passar o mouse -->
+            </form>
 
-      <form onsubmit="irParaPagina(event)">
-        <input type="text" placeholder="Usuário" required>
-        <input type="password" placeholder="Senha" required>
-        <button type="submit">Entrar</button>
-      </form>
-
-      <p class="cadastro-link">
-        Não tem conta? <a href="#">Cadastre-se</a>
-      </p>
+            <!-- Link para cadastro -->
+            <p>Não tem conta? <a href="cadastro.html">Cadastre-se</a></p>
+        </div>
     </div>
-  </div>
-  <script src="js/entraPagina.js"></script>
-  <script src="js/script.js"></script>
-  <script src="js/five.js"></script>
+
+    <!-- Importa o JavaScript externo -->
+    <script src="js/login.js"></script>
 </body>
 </html>
