@@ -6,14 +6,14 @@
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;                 /* 🔹 substitui width: 100% */
+  right: 0;                 /*  substitui width: 100% */
 
   display: flex;
   justify-content: space-between;
   align-items: center;
 
   padding: 12px 16px;       /* padding menor e seguro */
-  box-sizing: border-box;   /* 🔹 impede overflow */
+  box-sizing: border-box;   /* impede overflow */
 
   background: transparent;
   z-index: 100;
@@ -32,7 +32,6 @@
 /* Fundo exclusivo da página index */
 .index-page {
   background-color: #afdfee;
-
     /* possibilidade que combina com o index-page main ->
     linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),*/
 
