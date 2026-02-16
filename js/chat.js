@@ -1,3 +1,4 @@
+
 // Função chamada quando o usuário envia uma mensagem no formulário
 function enviarMensagem(event) {
   event.preventDefault(); // Impede que o formulário recarregue a página
@@ -26,7 +27,7 @@ function adicionarMensagem(tipo, texto) {
   if (tipo === "bot") {
     const avatar = document.createElement("span");
     avatar.className = "avatar"; // Classe para estilizar o avatar
-    avatar.textContent = "🤖"; // Emoji do robô
+    avatar.textContent = "\u{1F916}"; // Emoji do robô
     msg.appendChild(avatar); // Coloca o avatar dentro da mensagem
   }
 
@@ -47,7 +48,7 @@ function adicionarMensagem(tipo, texto) {
 function responderBot() {
   // Lista de respostas possíveis
   const respostas = [
-    "Entendo 💜 Quer me contar mais?",
+    "Entendo \u{1F49C} Quer me contar mais?",
     "Estou aqui com você.",
     "Respire fundo… você não está sozinho.",
     "Isso parece importante. Vamos conversar."
