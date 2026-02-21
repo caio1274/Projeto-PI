@@ -14,7 +14,7 @@ if(isset($_POST['email']) && isset($_POST['senha'])){
 
     if($resultado && $resultado->num_rows > 0){
         // Login correto
-        header("Location: LiaIA.html"); // redireciona para página principal
+        header("Location: ../html/LiaIA.html"); // redireciona para página principal
         exit();
     } else {
         $erro = "Email ou senha incorretos!";
@@ -28,13 +28,14 @@ if(isset($_POST['email']) && isset($_POST['senha'])){
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Conecte-se | Calmind</title>
-<link rel="stylesheet" href="css/login.css">
+<link rel="icon" href="../assets/imagens-logo/LOGO-fivecon.png">
+<link rel="stylesheet" href="../css/login.css">
 </head>
 <body>
 
 <div class="login-page">
     <div class="login-box">
-        <img src="Imagens-logo/LOGO.png" alt="Logo" class="logo">
+        <img src="../assets/Imagens-logo/LOGO.png" alt="Logo" class="logo">
         <h2>Conecte-se</h2>
 
         <!-- Mostra mensagem de erro -->
