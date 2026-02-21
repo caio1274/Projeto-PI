@@ -11,41 +11,58 @@ body {
   font-family: Arial, sans-serif;
 }
 
+/* ============================= */
 /* CÉU */
+/* ============================= */
+
 .ceu {
   position: fixed;
   inset: 0;
-  background: url("../images/ceu01.jpg") center/cover no-repeat;
+  background: url("../assets/images/ceu02.jpg") repeat-x;
+  background-size: auto 100%;
   z-index: 1;
+  animation: moverCeu 120s linear infinite;
 }
 
+@keyframes moverCeu {
+  from { background-position: 0 0; }
+  to { background-position: -3000px 0; }
+}
+
+/* ============================= */
 /* ÁGUA */
-.agua, .agua2 {
+/* ============================= */
+
+.agua,
+.agua2 {
   position: fixed;
   bottom: 0;
   left: 0;
-  width: 200%; /* maior que a tela para movimento contínuo */
+  width: 200%;
   height: 180px;
-  background-image: url("../images/AGUA.png"); /* troque por uma onda tileable se possível */
+  background-image: url("../assets/images/agua.png");
   background-size: auto 180px;
   background-repeat: repeat-x;
   z-index: 3;
-  animation: moverAgua 150s linear infinite; /* mais lenta para movimento natural */
+  animation: moverAgua 150s linear infinite;
 }
 
 .agua2 {
-  left: -100%; /* segunda camada cobre qualquer gap */
+  left: -100%;
 }
 
 @keyframes moverAgua {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); } /* move metade da largura para suavizar */
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
 
+/* ============================= */
 /* BARCO */
+/* ============================= */
+
 .barco {
   position: fixed;
-  bottom: 150px; /* leve ajuste para encostar na água */
+  bottom: 150px;
   left: 50%;
   transform: translateX(-50%);
   width: 260px;
@@ -59,10 +76,13 @@ body {
   100% { transform: translateX(-50%) translateY(0); }
 }
 
-/* LOGO SOBRE O BARCO */
+/* ============================= */
+/* LOGO */
+/* ============================= */
+
 .logo {
   position: fixed;
-  bottom: 300px; /* logo mais acima das ondas */
+  bottom: 300px;
   left: 50%;
   transform: translateX(-50%);
   width: 180px;

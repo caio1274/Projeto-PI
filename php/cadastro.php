@@ -33,13 +33,14 @@ if(isset($_POST['email']) && isset($_POST['senha'])){
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Cadastro | Calmind</title>
-<link rel="stylesheet" href="css/login.css">
+<link rel="icon" href="../assets/imagens-logo/LOGO-fivecon.png">
+<link rel="stylesheet" href="../css/login.css">
 </head>
 <body>
 
 <div class="login-page">
     <div class="login-box">
-        <img src="Imagens-logo/LOGO.png" alt="Logo" class="logo">
+        <img src="../Imagens-logo/LOGO.png" alt="Logo" class="logo">
         <h2>Cadastre-se</h2>
 
         <!-- Mensagem de erro -->
