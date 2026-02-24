@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login | Calmind</title>
+
+<link rel="icon" href="{% static 'favicon.ico' %}">
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+
+<body>
+
+<div class="login-page">
+    <div class="login-box">
+
+        <img src="{% static 'assets/imagens-logo/LOGO.png' %}" 
+             alt="Logo" class="logo">
+
+        <h2>Login</h2>
+
+        <!-- Quando clicar em Entrar vai para LiaIA -->
+        <form action="{% url 'liaia' %}" method="GET">
+
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="senha" placeholder="Senha" required>
+
+            <button type="submit">Entrar</button>
+
+        </form>
+
+        <p>
+            Não tem conta? 
+            <a href="{% url 'cadastro' %}">Cadastre-se</a>
+        </p>
+
+    </div>
+</div>
+
+</body>
+</html>

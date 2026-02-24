@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+
+    <title>Calmind</title>
+</head>
+
+<body class="index-page">
+
+<main>
+
+    <div class="barra-superior">
+        <img src="{% static 'assets/icones/configuracao.png' %}" alt="configuração">
+        <img src="{% static 'assets/icones/perfil.png' %}" alt="perfil">
+    </div>
+
+    <img src="{% static 'assets/imagens-logo/LOGO.png' %}"
+         alt="Imagem centralizada"
+         class="img-logo">
+
+    <section class="container-botao">
+
+        <a href="{% url 'acesso' %}">
+            <div class="botao"
+                 onmouseenter="entrou(this)"
+                 onmouseout="sair(this)">
+                Ir para conversar com a LiaIA
+            </div>
+        </a>
+
+        <a href="{% url 'navegacao' %}">
+            <div class="botao"
+                 onmouseenter="entrou(this)"
+                 onmouseout="sair(this)">
+                Ir para a página de navegação
+            </div>
+        </a>
+
+    </section>
+
+</main>
+
+<footer>
+    <p>O Calmind é um site que oferece ajuda rápida em situações de crise de ansiedade, tristeza profunda ou apoio emocional.</p>
+    <p><strong>A Lia é uma IA disponível 24h. Não substitui profissionais de saúde.</strong></p>
+</footer>
+
+<script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

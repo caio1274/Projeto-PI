@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="{% static 'favicon.ico' %}">
+  <title>Navegação</title>
+
+  <link rel="stylesheet" href="{% static 'css/navegacao.css' %}">
+</head>
+
+<body class="pagina-menu">
+
+  <!-- =========================
+       BARRA DO TOPO
+       ========================= -->
+  <div class="topo-menu">
+    <img src="{% static 'assets/icones/configuracao.png' %}" alt="Configuração">
+    <img src="{% static 'assets/icones/perfil.png' %}" alt="Perfil">
+  </div>
+
+  <!-- =========================
+       BARRA DE BUSCA
+       ========================= -->
+  <div class="busca-menu">
+    <input type="text" placeholder="Pesquisar...">
+  </div>
+
+  <!-- =========================
+       LOGO
+       ========================= -->
+  <img src="{% static 'assets/imagens-logo/LOGO.png' %}" alt="Logo" class="logo-menu">
+
+  <!-- =========================
+       CONTEÚDO PRINCIPAL
+       ========================= -->
+  <main class="conteudo-menu">
+
+    <section class="grade-botoes">
+
+      <!-- BOTÃO 1 -->
+      <a href="#" class="link-botao">
+        <div class="botao-menu">
+          <img src="{% static 'assets/imagens-utilizadas/conhecer.jpeg' %}" class="img-botao">
+          <div class="texto-botao">Aula de autoconhecimento</div>
+        </div>
+      </a>
+
+      <!-- BOTÃO 2 -->
+      <a href="#" class="link-botao">
+        <div class="botao-menu">
+          <img src="{% static 'assets/imagens-utilizadas/consultar.jpeg' %}" class="img-botao">
+          <div class="texto-botao">Marque sua consulta</div>
+        </div>
+      </a>
+  
+      <a href="{% url 'jogos' %}" class="link-botao">
+        <div class="botao-menu">
+          <img src="{% static 'assets/imagens-utilizadas/jogos.jpeg' %}" class="img-botao">
+          <div class="texto-botao">Jogos para descansar a mente</div>
+        </div>
+        </a>
+  
+      <a href="{% url 'exercicios' %}" class="link-botao">
+      <div class="botao-menu">
+        <img src="{% static 'assets/imagens-utilizadas/relaxamento.jpeg' %}" class="img-botao">
+        <div class="texto-botao">Exercícios de relaxamento</div>
+      </div>
+      </a>
+    </section>
+
+  </main>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Calmid</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="{% static 'css/execicios.css' %}">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="{% static 'favicon.ico' %}">
+</head>
+
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="logo">CALMID</div>
+
+    <div class="search">
+      <input type="text" placeholder="Buscar Exercícios">
+      <span>&#128269;</span> <!-- 🔍 -->
+    </div>
+
+    <div class="header-actions">
+      <div class="btn">&#10084;&#65039; Meus Exercícios</div>
+    </div>
+  </header>
+
+  <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+  <main>
+
+    <h2>&#129504; Exercícios em Destaque</h2>
+
+    <div class="carousel-container">
+      <button class="nav left" onclick="scrollCarousel('cima', -1)">&#9664;</button>
+
+      <div class="carousel" id="cima"></div>
+
+      <button class="nav right" onclick="scrollCarousel('cima', 1)">&#9654;</button>
+    </div>
+
+    <h2>&#10024; Mais Exercícios</h2>
+
+    <div class="carousel-container">
+      <button class="nav left" onclick="scrollCarousel('baixo', -1)">&#9664;</button>
+
+      <div class="carousel" id="baixo"></div>
+
+      <button class="nav right" onclick="scrollCarousel('baixo', 1)">&#9654;</button>
+    </div>
+
+  </main>
+
+  <!-- JS -->
+  <script src="{% static 'js/exercicios.js' %}"></script>
+
+</body>
+</html>
