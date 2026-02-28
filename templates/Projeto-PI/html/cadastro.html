@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Cadastro | Calmind</title>
 
-<link rel="icon" href="{% static 'assets/imagens-logo/LOGO-fivecon.png' %}">
+<link rel="icon" href="{% static 'favicon.ico' %}">
 <link rel="stylesheet" href="{% static 'css/login.css' %}">
 
 </head>
@@ -19,11 +19,10 @@
 
         <form method="POST">
             {% csrf_token %}
-            <input type="email" name="email" placeholder="Email" required>
-            <input type="password" name="senha" placeholder="Senha" required>
+            {{ form.as_p }}
+            
             <button type="submit">Cadastrar</button>
         </form>
-
         <p>Já tem conta? <a href="{% url 'login' %}">Faça login</a></p>
     </div>
 </div>

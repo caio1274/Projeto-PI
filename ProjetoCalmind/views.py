@@ -5,3 +5,5 @@ def carregando(request):
 
 def index(request):
     return render(request, 'Projeto-PI/index.html')
+def login(request):
+    return render(request,'Projeto-PI/html/login.html')
