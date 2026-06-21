@@ -1,62 +1,98 @@
-
-// Função chamada quando o usuário envia uma mensagem no formulário
+// enviar mensagem
 function enviarMensagem(event) {
-  event.preventDefault(); // Impede que o formulário recarregue a página
+  event.preventDefault();
 
-  const input = document.getElementById("mensagem"); // Pega o campo de texto
-  const texto = input.value.trim(); // Remove espaços extras no início/fim
-  if (!texto) return; // Se estiver vazio, não faz nada
+  const input = document.getElementById("mensagem");
+  const texto = input.value.trim();
 
-  adicionarMensagem("user", texto); // Adiciona a mensagem do usuário no chat
-  input.value = ""; // Limpa o campo de texto
+  if (!texto) return;
 
-  // Aguarda 800ms e chama a resposta do bot
-  setTimeout(() => {
-    responderBot();
-  }, 800);
+  adicionarMensagem("user", texto);
+  input.value = "";
+
+  responderBot(texto);
 }
 
-// Função que adiciona uma nova mensagem ao chat
-function adicionarMensagem(tipo, texto) {
-  const chat = document.getElementById("chatArea"); // Área do chat
 
-  const msg = document.createElement("div"); // Cria um novo bloco de mensagem
-  msg.className = `msg ${tipo}`; // Define a classe (msg user ou msg bot)
+// resposta da IA
+async function responderBot(textoUsuario){
 
-  // Se for mensagem do bot, adiciona o avatar 🤖
-  if (tipo === "bot") {
-    const avatar = document.createElement("span");
-    avatar.className = "avatar"; // Classe para estilizar o avatar
-    avatar.textContent = "\u{1F916}"; // Emoji do robô
-    msg.appendChild(avatar); // Coloca o avatar dentro da mensagem
+  const chat = document.getElementById("chatArea");
+
+  const msg = document.createElement("div");
+  msg.className = "msg bot";
+
+  const avatar = document.createElement("span");
+  avatar.className = "avatar";
+  avatar.textContent = "🤖";
+
+  const bubble = document.createElement("div");
+  bubble.className = "bubble";
+  bubble.textContent = "Digitando...";
+
+  msg.appendChild(avatar);
+  msg.appendChild(bubble);
+  chat.appendChild(msg);
+
+  chat.scrollTop = chat.scrollHeight;
+
+  try {
+
+    const resposta = await fetch("/chat/", {   // 🔥 AQUI CORRIGIDO
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ message: textoUsuario })
+    });
+
+    const dados = await resposta.json();
+
+    bubble.textContent = "";
+    escreverAnimado(bubble, dados.reply || "Erro: sem resposta");
+
+  } catch (erro) {
+
+    bubble.textContent = "Erro ao conectar com o servidor.";
+    console.error(erro);
+
   }
 
-  // Cria a bolha de texto
+}
+
+
+// adiciona mensagem do usuário
+function adicionarMensagem(tipo, texto) {
+
+  const chat = document.getElementById("chatArea");
+
+  const msg = document.createElement("div");
+  msg.className = `msg ${tipo}`;
+
   const bubble = document.createElement("div");
-  bubble.className = "bubble"; // Classe para estilizar a bolha
-  bubble.textContent = texto; // Texto da mensagem
+  bubble.className = "bubble";
+  bubble.textContent = texto;
 
-  // Junta tudo: avatar (se houver) + bolha
   msg.appendChild(bubble);
-  chat.appendChild(msg); // Adiciona a mensagem na área do chat
+  chat.appendChild(msg);
 
-  // Faz o scroll automático para mostrar a última mensagem
   chat.scrollTop = chat.scrollHeight;
 }
 
-// Função que gera uma resposta automática do bot
-function responderBot() {
-  // Lista de respostas possíveis
-  const respostas = [
-    "Entendo \u{1F49C} Quer me contar mais?",
-    "Estou aqui com você.",
-    "Respire fundo… você não está sozinho.",
-    "Isso parece importante. Vamos conversar."
-  ];
 
-  // Escolhe uma resposta aleatória da lista
-  const resposta = respostas[Math.floor(Math.random() * respostas.length)];
+// efeito máquina de escrever
+function escreverAnimado(elemento, texto, velocidade = 20) {
 
-  // Adiciona a resposta do bot no chat
-  adicionarMensagem("bot", resposta);
+  let i = 0;
+  elemento.textContent = "";
+
+  function digitar() {
+    if (i < texto.length) {
+      elemento.textContent += texto.charAt(i);
+      i++;
+      setTimeout(digitar, velocidade);
+    }
+  }
+
+  digitar();
 }

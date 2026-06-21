@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+from ...liaia.chat import chat_api
 
 urlpatterns = [
     path('', views.carregando, name='carregando'),
@@ -9,4 +10,5 @@ urlpatterns = [
     path('chat/', views.chat, name='chat'),
     path('menu/', views.navegacao, name='menu'),
     path('jogos/', views.jogos, name='jogos'),
+    path("chat-api/", chat_api),
 ]

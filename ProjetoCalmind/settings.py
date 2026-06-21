@@ -26,6 +26,7 @@ SECRET_KEY = 'django-insecure-ba9a4sz%gju#og9#t@#n=w#j_vq6usd14bnb1n#$%^^jw*o0z@
 DEBUG = True
 
 ALLOWED_HOSTS = []
+PASSWORD_PEPPER = "minha_chave_secreta_123"
 
 
 # Application definition
@@ -38,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'usuarios',
+    'liaia'
 ]
 
 MIDDLEWARE = [
